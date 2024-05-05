@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dio_test/dummyjson_resource/view/dummyjson_view.dart';
 import 'package:flutter_dio_test/reqrest_resource/view/req_res_view.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ReqresView(),
+      home: const DummyjsonView(),
     );
   }
 }
