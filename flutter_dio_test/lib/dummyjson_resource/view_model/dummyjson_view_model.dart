@@ -9,6 +9,7 @@ abstract class DummyjsonViewModel extends State<DummyjsonView> with ProjectDioMi
   late final IDummyjsonService dummyjsonService;
   bool isLoading = false;
   List<Products> clubs = [];
+  
 
   void changeLoading() {
     setState(() {

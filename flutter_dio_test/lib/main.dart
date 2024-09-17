@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const DummyjsonView(),
+      home: const ReqresView(),
     );
   }
 }

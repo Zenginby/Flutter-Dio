@@ -16,7 +16,8 @@ class _ReqresViewState extends ReqresViewModel {
     return  Scaffold(
       appBar: AppBar(title: isLoading ? const CircularProgressIndicator() : null,),
       body: ListView.builder(itemBuilder: (context, index) {
-        return Card(color:Color(resources[index].color?.colorValue ?? 0) , child: Text(resources[index].name ?? ''));
+        return resources.isNotEmpty? Card(color:Color(resources[index].color?.colorValue ?? 0) , child: Text(resources[index].name ?? ''))
+        : Text("data");
       },
       itemCount: resources.length,
       ),

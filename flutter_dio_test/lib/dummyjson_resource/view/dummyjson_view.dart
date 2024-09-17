@@ -25,8 +25,8 @@ class _DummyJsonState extends DummyjsonViewModel {
       results = clubs;
     } else {
       results = clubs
-          .where((product) =>
-              product.title!.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .where((element) =>
+              element.title!.toLowerCase().contains(enteredKeyword.toLowerCase()))
           .toList();
       // we use the toLowerCase() method to make it case-insensitive
     }
@@ -60,11 +60,11 @@ class _DummyJsonState extends DummyjsonViewModel {
           ),
         ),
       ),
-      body: clubs.isNotEmpty
+      body: _foundUsers.isNotEmpty
           ? ListView.builder(
               itemBuilder: (context, index) {
                 return Card(
-                  key: ValueKey(clubs[index].id),
+                  key: ValueKey(_foundUsers[index].id),
                   elevation: 4,
                   clipBehavior: Clip.antiAlias,
                   margin: const EdgeInsets.symmetric(vertical: 10),
@@ -78,21 +78,19 @@ class _DummyJsonState extends DummyjsonViewModel {
                               //   style: const TextStyle(
                               //       fontSize: 24, color: Colors.white),
                               // ),
-                              title: Text(clubs[index].title.toString(),
+                              title: Text(_foundUsers[index].title.toString(),
                                   style: const TextStyle(color: Colors.black)),
-                              subtitle: Text(clubs[index].description.toString(),
+                              subtitle: Text(_foundUsers[index].description.toString(),
                                   maxLines: 2,
                                   style: const TextStyle(color: Colors.black)),
                             ),
                             const SizedBox(
                               height: 12,
-                            ),
-
-                            
+                            ),         
                             ]),
                 );
               },
-              itemCount: clubs.length,
+              itemCount: _foundUsers.length,
             )
           : Text("data"),
     );

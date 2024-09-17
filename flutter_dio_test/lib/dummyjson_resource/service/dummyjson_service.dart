@@ -12,14 +12,14 @@ abstract class IDummyjsonService{
 Future <ProductModel?> fechResourceItem();
 }
 
-enum _DummyJsonPath{ product }
+enum _DummyJsonPath{ products }
 
 class DummyjsonService extends IDummyjsonService{
   DummyjsonService(Dio service, {required super.dio});
 
   @override
   Future<ProductModel?> fechResourceItem() async {
-    final response = await dio.get('https://dummyjson.com/products');
+    final response = await dio.get('/${_DummyJsonPath.products.name}');
 
     if (response.statusCode == HttpStatus.ok) {
       final jsonBody = response.data;
